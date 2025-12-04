@@ -1,4 +1,4 @@
-package com.dzmitry.reactive_kafka;
+package com.dzmitry.reactivekafka;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

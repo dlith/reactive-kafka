@@ -1,4 +1,4 @@
-package com.dzmitry.reactive_kafka;
+package com.dzmitry.reactivekafka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
