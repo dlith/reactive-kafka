@@ -3,3 +3,7 @@ docker exec -it kafka bash
 kafka-topics.sh --bootstrap-server localhost:9092 --topic order-events --create
 
 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic order-events
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic order-returns --create
+
+kafka-console-producer.sh --bootstrap-server localhost:9092 --topic order-returns
