@@ -7,3 +7,7 @@ kafka-console-producer.sh --bootstrap-server localhost:9092 --topic order-events
 kafka-topics.sh --bootstrap-server localhost:9092 --topic order-returns --create
 
 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic order-returns
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic order-events --create --partitions 2 --replication-factor 3
+
+kafka-topics.sh --bootstrap-server localhost:9092 --topic order-events --describe
