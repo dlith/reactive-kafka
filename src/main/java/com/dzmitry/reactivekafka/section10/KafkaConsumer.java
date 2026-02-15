@@ -6,6 +6,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 import reactor.kafka.receiver.KafkaReceiver;
 import reactor.kafka.receiver.ReceiverOptions;
 
@@ -41,6 +42,7 @@ public class KafkaConsumer {
 
     private static Mono<Void> batchProcess(Flux<ConsumerRecord<Object, Object>> flux) {
         return flux
+                .publishOn(Schedulers.boundedElastic())
                 .doFirst(() -> log.info("---------"))
                 .doOnNext(r -> log.info("key: {}, value: {}", r.key(), r.value()))
                 .then(Mono.delay(Duration.ofSeconds(1)))
