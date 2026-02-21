@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Slf4j
-public class KafkaConsumer {
+public class KafkaConsumerV1 {
 
     public static void main(String[] args) {
 
